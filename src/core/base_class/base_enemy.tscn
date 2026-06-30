@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://c45uk81chror"]
+
+[ext_resource type="PackedScene" uid="uid://gvxexw2e15t" path="res://src/core/base_class/base_character.tscn" id="1_u48xh"]
+[ext_resource type="Script" uid="uid://b1tpotlenskty" path="res://src/core/base_class/base_enemy.gd" id="2_4w0oj"]
+[ext_resource type="Script" uid="uid://cuufiyd5iq8p3" path="res://src/gameplay/enemies/slime_fsm.gd" id="3_1334v"]
+
+[node name="Enemy" unique_id=944261274 instance=ExtResource("1_u48xh")]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("2_4w0oj")
+
+[node name="FSM" parent="." index="0" unique_id=1124020610]
+script = ExtResource("3_1334v")
+
+[node name="NavigationTimer" type="Timer" parent="." index="4" unique_id=681487733]
+wait_time = 0.1
+autostart = true
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." index="5" unique_id=1103318588]
+
+[node name="AttackTimer" type="Timer" parent="." index="7" unique_id=199327945]
+
+[connection signal="timeout" from="NavigationTimer" to="." method="_on_navigation_timer_timeout"]
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]

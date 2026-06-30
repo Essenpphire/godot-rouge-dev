@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://gvxexw2e15t"]
+
+[ext_resource type="Script" uid="uid://cc4hvc3pbwo0k" path="res://src/core/base_class/base_character.gd" id="1_xay7f"]
+[ext_resource type="Script" uid="uid://m2jy1uqrrb10" path="res://src/core/autoload/FSM.gd" id="2_2xc8l"]
+[ext_resource type="Script" uid="uid://ctfwdpwuqvhud" path="res://src/core/base_class/base_hitbox.gd" id="3_2xc8l"]
+
+[node name="Character" type="CharacterBody2D" unique_id=762989554]
+script = ExtResource("1_xay7f")
+metadata/_custom_type_script = "uid://cc4hvc3pbwo0k"
+
+[node name="FSM" type="Node" parent="." unique_id=1124020610]
+script = ExtResource("2_2xc8l")
+metadata/_custom_type_script = "uid://m2jy1uqrrb10"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1366849878]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2109857994]
+
+[node name="Hurtbox" type="CollisionShape2D" parent="." unique_id=1879911692]
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=1163470726]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("3_2xc8l")

@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bdu3nrkubgmpc"]
+
+[ext_resource type="Script" uid="uid://bjo3hmdf7iccu" path="res://src/maps/rooms_manager.gd" id="1_1bc38"]
+
+[node name="地牢_第一层" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_1bc38")

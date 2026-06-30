@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://c30u1jncvwn01"]
+
+[ext_resource type="Script" uid="uid://dx4t4fwqej8k2" path="res://src/maps/props/宝箱.gd" id="1_mwhhe"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8w5we"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mkpxl"]
+size = Vector2(61.5, 65)
+
+[node name="Prop" type="StaticBody2D" unique_id=201601985]
+script = ExtResource("1_mwhhe")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1438179341]
+sprite_frames = SubResource("SpriteFrames_8w5we")
+autoplay = "default"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1746071498 groups=["Box"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1272923858]
+shape = SubResource("RectangleShape2D_mkpxl")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

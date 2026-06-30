@@ -1,0 +1,30 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://cfivx0gw6i1y6"]
+
+[ext_resource type="Texture2D" uid="uid://bx8ppueito6vk" path="res://assets/images/tilesets/地牢/Objects_Overlay.png" id="1_h4eo5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h4eo5"]
+atlas = ExtResource("1_h4eo5")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_durve"]
+atlas = ExtResource("1_h4eo5")
+region = Rect2(32, 63, 32, 42)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h4eo5")
+}],
+"loop": 1,
+"name": &"close",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_durve")
+}],
+"loop": 1,
+"name": &"open",
+"speed": 5.0
+}]
